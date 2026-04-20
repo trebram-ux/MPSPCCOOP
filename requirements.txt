@@ -1,0 +1,15 @@
+asgiref
+Django
+django-filter
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+PyJWT
+gunicorn
+whitenoise
+dj-database-url
+pytz
+sqlparse
+psycopg2-binary
+python-dotenv
+-r misty/MPSUUU-COOP/mpsucoop/mcoop_db/mcoop_db/requirements.txt

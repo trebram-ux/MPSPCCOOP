@@ -1,0 +1,825 @@
+/* Ledger.css - PayPal-Style Responsive Design */
+
+/* Base container styles */
+.ledger-container {
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ledger-page-content {
+  margin-top: 110px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: -85px;
+}
+
+.ledger-main-container {
+  width: 1380px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Stats grid */
+.ledger-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.ledger-stat-card {
+  background: #dededeff;
+  box-shadow: 0px 8px 5px rgba(59, 59, 59, 0.99);
+  border-radius: 15px;
+  padding: 10px;
+  color: black;
+  text-align: center;
+}
+
+.ledger-stat-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ledger-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.ledger-stat-value-large {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.ledger-stat-deposits {
+  font-size: 14px;
+  color: #28a745;
+  font-weight: 600;
+}
+
+.ledger-stat-deposits-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.ledger-stat-withdrawals {
+  font-size: 14px;
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.ledger-stat-withdrawals-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #dc3545;
+}
+
+.ledger-stat-split {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+/* Transactions container */
+.ledger-transactions-container {
+  background: white;
+  box-shadow: 0px 8px 8px rgba(59, 59, 59, 0.99);
+  border-radius: 15px;
+  overflow: hidden;
+  height: 450px;
+}
+
+/* Header */
+.ledger-header {
+  background: #000000ff;
+  padding: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.ledger-back-button {
+  background: rgba(94, 94, 94, 1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  gap: 8px;
+  max-width: 100px;
+  width: auto;
+}
+
+.ledger-back-button:hover {
+  transform: translateY(-3px);
+}
+
+.ledger-header-title-section {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.ledger-header-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ledger-header-subtitle {
+  font-size: 16px;
+  margin: 0;
+}
+
+.ledger-header-spacer {
+  width: 120px;
+}
+
+/* Table wrapper */
+.ledger-table-wrapper {
+  height: 350px;
+  overflow: hidden;
+}
+
+.table-container {
+  height: 100%;
+  width: 100%;
+  margin-top: -30px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+  padding-bottom: 20px;
+  margin-left: -30px;
+}
+
+.table-container::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Table styles */
+.ledger-table {
+  width: 1377px;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 2px;
+  margin-left: 1px;
+}
+
+.ledger-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f8f9fa;
+}
+
+.ledger-table thead tr {
+  background: #f8f9fa;
+  border-bottom: 2px solid #000000ff;
+}
+
+.ledger-table-header-cell {
+  padding: 10px 10px;
+  text-align: left;
+  font-weight: 700;
+  color: #000000ff;
+  font-size: 16px;
+  border-right: 1px solid #000000ff;
+  min-width: 150px;
+  white-space: nowrap;
+}
+
+.ledger-table-header-cell.amount-col {
+  min-width: 120px;
+}
+
+.ledger-table-header-cell.description-col {
+  min-width: 200px;
+}
+
+.ledger-table-header-cell.total-col {
+  min-width: 120px;
+}
+
+.ledger-table-header-cell.date-col {
+  min-width: 120px;
+}
+
+.ledger-table-header-cell.or-col {
+  min-width: 160px;
+}
+
+.ledger-table-header-cell.resolution-col {
+  min-width: 200px;
+}
+
+.ledger-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.ledger-table tbody tr.even-row {
+  background-color: #f9f9f9;
+}
+
+.ledger-table tbody tr.odd-row {
+  background-color: white;
+}
+
+.ledger-table-body-cell {
+  padding: 12px 10px;
+  color: #000000ff;
+  border-right: 1px solid #000000ff;
+  border-bottom: 1px solid #999999ff;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ledger-table-body-cell.type-col {
+  font-weight: 500;
+}
+
+.ledger-table-body-cell.type-col.initial-deposit {
+  font-weight: 700;
+}
+
+.ledger-table-body-cell.amount-col {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.ledger-table-body-cell.total-col {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.ledger-table-body-cell.italic-text {
+  font-style: italic;
+}
+
+.transaction-type-flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.initial-badge {
+  background: #28a745;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.no-transactions-container {
+  padding: 40px;
+  text-align: center;
+  color: #000000ff;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.no-transactions-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.no-transactions-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.no-transactions-subtitle {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Mobile Card Layout - Hidden by default */
+.mobile-transaction-cards {
+  display: none;
+}
+
+.mobile-transaction-card {
+  background: #dadada;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-transaction-card.even-row {
+  background-color: #dadada;
+}
+
+.mobile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.mobile-card-type {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #000000ff;
+}
+
+.mobile-card-amount {
+  font-size: 12px;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.mobile-card-amount.withdrawal {
+  color: #dc3545;
+}
+
+.mobile-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+}
+
+.mobile-card-label {
+  font-weight: 600;
+  color: #000000;
+  min-width: 100px;
+}
+
+.mobile-card-value {
+  text-align: right;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  flex: 1;
+  word-wrap: break-word;
+}
+
+.mobile-card-value.italic-text {
+  font-style: italic;
+  color: #000000;
+}
+
+.mobile-card-total {
+  margin-top: 1px;
+  padding-top: 1px;
+  border-top: 1px solid #ababab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-card-total-label {
+  font-weight: 700;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}
+
+.mobile-card-total-value {
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000ff;
+}
+
+.mobile-no-transactions {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Loading and error states */
+.loading-container,
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loading-content {
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #667eea;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+.loading-text {
+  color: #0b78e6ff;
+  font-size: 14px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-content {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+}
+
+.error-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: white;
+}
+
+.error-title {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.error-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.error-button:hover {
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - PAYPAL STYLE
+   Desktop layout is preserved, only mobile adjusts
+   ======================================== */
+
+/* Large screens - Minor adjustments only */
+@media (max-width: 1440px) {
+  .ledger-main-container {
+    width: 95%;
+    max-width: 1380px;
+  }
+
+  .ledger-page-content {
+    margin-left: 0;
+    padding: 0 20px;
+  }
+
+  .table-container {
+    margin-left: 0;
+  }
+
+  .ledger-table {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Tablet landscape - Enable horizontal scroll for table */
+@media (max-width: 1024px) {
+  .ledger-page-content {
+    margin-left: 0;
+    padding: 0 15px;
+  }
+
+  .ledger-main-container {
+    width: 100%;
+  }
+
+  .ledger-stats-grid {
+    gap: 20px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    margin-left: 0;
+  }
+
+  .ledger-table {
+    min-width: 1200px;
+  }
+}
+
+/* Tablet portrait - Switch to card view */
+@media (max-width: 768px) {
+  .ledger-page-content {
+    margin-left: 0;
+    padding: 0 15px;
+    margin-top: 120px;
+  }
+
+  .ledger-main-container {
+    width: 100%;
+  }
+
+  .ledger-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .ledger-stat-card {
+    padding: 10px;
+  }
+
+  .ledger-stat-card-title {
+    font-size: 12px;
+  }
+
+  .ledger-stat-value-large {
+    font-size: 18px;
+  }
+
+  .ledger-stat-deposits,
+  .ledger-stat-withdrawals {
+    font-size: 11px;
+  }
+
+  .ledger-stat-deposits-value,
+  .ledger-stat-withdrawals-value {
+    font-size: 16px;
+  }
+
+  .ledger-transactions-container {
+    height: auto;
+  }
+
+  .ledger-header {
+    flex-direction: row;
+    gap: 10px;
+    padding: 15px;
+    align-items: center;
+  }
+
+  .ledger-back-button {
+    width: auto;
+    max-width: none;
+    padding: 8px 12px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .ledger-header-title-section {
+    width: auto;
+    flex: 1;
+    text-align: left;
+  }
+
+  .ledger-header-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .ledger-header-subtitle {
+    font-size: 12px;
+  }
+
+  .ledger-header-spacer {
+    display: none;
+  }
+
+  .ledger-table-wrapper {
+    height: auto;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 15px;
+  }
+
+  /* Hide table, show cards */
+  .table-container {
+    display: none;
+  }
+
+  .mobile-transaction-cards {
+    display: block;
+  }
+}
+
+/* Mobile - Optimized card view */
+@media (max-width: 480px) {
+  .ledger-page-content {
+    padding: 0 10px;
+    margin-top: 150px;
+  }
+
+  .ledger-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .ledger-stat-card {
+    padding: 5px;
+  }
+
+  .ledger-stat-card-title {
+    font-size: 11px;
+  }
+
+  .ledger-stat-value-large {
+    font-size: 12px;
+  }
+
+  .ledger-stat-deposits,
+  .ledger-stat-withdrawals {
+    font-size: 9px;
+  }
+
+  .ledger-stat-deposits-value,
+  .ledger-stat-withdrawals-value {
+    font-size: 12px;
+  }
+
+  .ledger-header {
+    padding: 12px;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .ledger-back-button {
+    padding: 5px 5px;
+    font-size: 12px;
+    width: auto;
+    max-width: 60px;
+    flex-shrink: 0;
+  }
+
+  .ledger-header-title-section {
+    text-align: center;
+    flex: 1;
+  }
+
+  .ledger-header-title {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+
+  .ledger-header-subtitle {
+    font-size: 11px;
+  }
+
+  .ledger-table-wrapper {
+    padding: 12px;
+    max-height: 500px;
+  }
+
+  .mobile-transaction-card {
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  .mobile-card-type {
+    font-size: 13px;
+  }
+
+  .mobile-card-amount {
+    font-size: 14px;
+  }
+
+  .mobile-card-label {
+    min-width: 110px;
+  }
+
+  .mobile-card-row {
+    font-size: 12px;
+  }
+}
+
+/* Landscape phones - Keep table visible with scroll */
+@media (max-height: 600px) and (orientation: landscape) {
+  .ledger-page-content {
+    margin-top: 90px;
+    padding: 0 15px;
+  }
+
+  .ledger-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+
+  .ledger-stat-card {
+    padding: 10px;
+  }
+
+  .ledger-stat-card-title {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  .ledger-stat-value-large {
+    font-size: 18px;
+  }
+
+  .ledger-transactions-container {
+    height: auto;
+  }
+
+  .ledger-header {
+    padding: 10px;
+  }
+
+  .ledger-header-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .ledger-header-subtitle {
+    font-size: 13px;
+  }
+
+  .ledger-table-wrapper {
+    height: 280px;
+  }
+
+  /* Keep table in landscape */
+  .table-container {
+    display: block;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  .mobile-transaction-cards {
+    display: none;
+  }
+
+  .ledger-table {
+    font-size: 11px;
+    min-width: 1000px;
+  }
+
+  .ledger-table-header-cell {
+    padding: 6px 5px;
+    font-size: 12px;
+  }
+
+  .ledger-table-body-cell {
+    padding: 6px 5px;
+    font-size: 11px;
+  }
+}
